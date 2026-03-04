@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏎️ ADHD Grand Prix: Task Selector
 
-## Getting Started
+> **Overcome executive dysfunction and decision paralysis by gamifying task selection through a high-stimulation F1 racing metaphor.**
 
-First, run the development server:
+ADHD Grand Prix is a beautiful, gamified task manager built specifically for neurodivergent individuals (ADHD/Autism) who struggle with "waiting mode" and initiating tasks. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+By turning your everyday chores and to-dos into high-speed Formula 1 cars circling a perpetual track, it introduces a dopamine-driven urgency and visual competition into task selection.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![App Screenshot](./public/preview.png) *(Preview of the Race Control Dashboard)*
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Features
 
-## Learn More
+*   **🚦 The Paddock (Task Management)**
+    *   Create tasks ("Drivers") with custom names.
+    *   Set **Importance Multipliers** (High = 🔴 Fast, Medium = 🟡 Base, Low = 🟢 Slow).
+    *   Assign distinct hex-code **Liveries** (colors) to each car, with support for unlimited custom colors and a quick-select palette.
+*   **🏎️ The Perpetual Track (Idle Fidget Canvas)**
+    *   A highly engaging HTML5 Canvas drawing a realistic top-down racing circuit.
+    *   Active tasks orbit the track instantly, drawn as detailed 2D F1 cars (front wings, sidepods, halos, blinking tail lights, and grass textures).
+    *   Car speeds scale dynamically based on their importance multiplier.
+*   **🏁 The Green Flag (Selection Logic)**
+    *   Initiate an intense "Sprint" taking all cars to maximum speed.
+    *   A weighted RNG algorithm selects a winner based on their importance multiplier.
+    *   A sleek modal interrupts to present you with your new focus task.
+*   **🔧 The Pit Lane (Anti-Frustration)**
+    *   Not feeling the task selected? Click **Cooldown** to send the car to the Pit Lane.
+    *   Cars in the Pit Lane are visually parked in the Garage below the track.
+    *   They suffer a 3-race cooldown penalty, slowly depleting after subsequent races before being automatically restored to the active grid.
+*   **📱 Mobile Responsive & Premium UI**
+    *   A high-end, dark-mode, glassmorphic "Race Control Dashboard" aesthetic.
+    *   Flawlessly responsive: Side-by-side on desktop, seamlessly stacked on mobile.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   **Framework:** [Next.js (App Router)](https://nextjs.org/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Database:** `better-sqlite3` (Local file-based SQL, perfect for privacy and speed)
+*   **Graphics:** 2D HTML5 Canvas API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+First, ensure you have Node.js installed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/adhd-grand-prix.git
+    cd adhd-grand-prix
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Open the app:**
+    Navigate to [http://localhost:3000](http://localhost:3000) in your browser to enter the Paddock. *Note: SQLite will automatically build a local `tasks.db` file in your project root on first load.*
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/adhd-grand-prix/issues).
+
+## 📄 License
+This project is open source and available under the [MIT License](LICENSE).
